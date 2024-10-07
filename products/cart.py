@@ -1,9 +1,13 @@
 from decimal import Decimal
 from django.conf import settings
 from .models import Products
+from django.shortcuts import redirect
+
 
 class Cart:
     def __init__(self, request):
+        if not request.user.is_authenticated:           
+            print("Você precisa logar/cadastrar")
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION_ID)
         if not cart:
