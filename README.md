@@ -18,6 +18,10 @@
     </h4>
 </div>
 
+<h4> 
+    Equipe:
+    Edivan Figueiredo Braga
+</h4>
 
 
 <h2 align="center"> 
@@ -58,10 +62,6 @@ $ python manage.py runserver
 🎯 Principais Rotas da API
 
 Aqui estão as principais rotas da API de e-commerce:
-🔐 Autenticação de Usuários
-
-    POST /auth/login/ - Faz o login do usuário.
-    POST /auth/register/ - Registra um novo usuário.
 
 🛒 Produtos
 
@@ -93,6 +93,5 @@ As principais tecnologias usadas no desenvolvimento deste projeto incluem:
 
     Backend: Django, Django Rest Framework
     Banco de Dados: PostgreSQL
-    Autenticação: Django Rest Framework JWT
     Serviço de Imagens: Pillow para gerenciamento de imagens dos produtos.
 
