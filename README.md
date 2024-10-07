@@ -23,3 +23,76 @@
 <h2 align="center"> 
     :construction:  Projeto em construção  :construction:
 </h2>
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina Python 3.10 ou qualquer versão acima. Além disso, é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/).
+
+### 🎲 Rodando o Back End (servidor)
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/CaosFera/FASHION-AVENUE.git
+
+# 1. Acesse a pasta do projeto
+$ cd Fashion-Avenue
+
+# 2. Crie e ative o ambiente virtual (virtualenv)
+$ python -m venv venv
+$ source venv/bin/activate  # Linux e Mac
+$ venv\Scripts\Activate  # Windows
+
+# 3. Instale as dependências do projeto
+$ pip install -r requirements.txt
+
+# 4. Execute as migrações do banco de dados
+$ python manage.py migrate
+
+# 5. Crie um superusuário para acessar o admin do Django
+$ python manage.py createsuperuser
+
+# 6. Execute o servidor em modo de desenvolvimento
+$ python manage.py runserver
+
+# O servidor inciará na porta:8000 - acesse <http://localhost:8000>
+🎯 Principais Rotas da API
+
+Aqui estão as principais rotas da API de e-commerce:
+🔐 Autenticação de Usuários
+
+    POST /auth/login/ - Faz o login do usuário.
+    POST /auth/register/ - Registra um novo usuário.
+
+🛒 Produtos
+
+    GET /products/ - Retorna a lista de produtos disponíveis.
+    GET /categories/slug/{id}/products/slug/{id}/ - Retorna os detalhes de um produto específico.
+    POST /categories/slug/{id}/products/slug/{id}/ - Cria um novo produto (requer autenticação de administrador).
+    PUT /categories/slug/{id}/products/slug/{id}/ - Atualiza um produto (requer autenticação de administrador).
+    DELETE /categories/slug/{id}/products/slug/{id}/ - Exclui um produto (requer autenticação de administrador).
+
+    
+📦 Categorias
+
+    GET /categories/ - Retorna a lista de categorias de produtos.
+    GET /categories/slug/{id}/ - Retorna os detalhes de uma categoria específica.
+    POST /categories/slug/{id}/ - Cria uma nova categoria (requer autenticação de administrador).
+    PUT /categories/slug/{id}/ - Atualiza uma categoria (requer autenticação de administrador).
+    DELETE /categories/slug/{id}/ - Exclui  uma categoria (requer autenticação de administrador).
+
+🛍️ Carrinho de Compras
+
+    GET /cart-detail/ - Retorna os itens no carrinho de compras do usuário.
+    POST /cart/ - Adiciona um produto ao carrinho.
+    DELETE /cart/ - Remove um produto do carrinho.
+
+
+🛠️ Tecnologias Utilizadas
+
+As principais tecnologias usadas no desenvolvimento deste projeto incluem:
+
+    Backend: Django, Django Rest Framework
+    Banco de Dados: PostgreSQL
+    Autenticação: Django Rest Framework JWT
+    Serviço de Imagens: Pillow para gerenciamento de imagens dos produtos.
+
