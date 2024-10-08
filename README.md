@@ -59,11 +59,15 @@ $ python manage.py createsuperuser
 $ python manage.py runserver
 
 # O servidor inciará na porta:8000 - acesse <http://localhost:8000>
-🎯 Principais Rotas da API
+🎯 Aqui estão as principais rotas da API de e-commerce:
 
-Aqui estão as principais rotas da API de e-commerce:
+🔑 Autenticação de Usuários:
 
-🛒 Produtos
+    POST /users/login/ Dar acesso ao usuário
+    POST /users/logout/ Desconecta o usuário
+    POST /users/registration/ Resgistra um usuário
+
+🛒 Produtos:
 
     GET /products/ - Retorna a lista de produtos disponíveis.
     GET /categories/slug/{id}/products/slug/{id}/ - Retorna os detalhes de um produto específico.
@@ -72,7 +76,7 @@ Aqui estão as principais rotas da API de e-commerce:
     DELETE /categories/slug/{id}/products/slug/{id}/ - Exclui um produto (requer autenticação de administrador).
 
     
-📦 Categorias
+📦 Categorias:
 
     GET /categories/ - Retorna a lista de categorias de produtos.
     GET /categories/slug/{id}/ - Retorna os detalhes de uma categoria específica.
@@ -80,7 +84,7 @@ Aqui estão as principais rotas da API de e-commerce:
     PUT /categories/slug/{id}/ - Atualiza uma categoria (requer autenticação de administrador).
     DELETE /categories/slug/{id}/ - Exclui  uma categoria (requer autenticação de administrador).
 
-🛍️ Carrinho de Compras
+🛍️ Carrinho de Compras:
 
     GET /cart-detail/ - Retorna os itens no carrinho de compras do usuário.
     POST /cart/ - Adiciona um produto ao carrinho.
@@ -91,7 +95,11 @@ Aqui estão as principais rotas da API de e-commerce:
 
 As principais tecnologias usadas no desenvolvimento deste projeto incluem:
 
-    Backend: Django, Django Rest Framework
-    Banco de Dados: PostgreSQL
-    Serviço de Imagens: Pillow para gerenciamento de imagens dos produtos.
+    Backend: Django, Django Rest Framework.
+    Banco de Dados: PostgreSQL.
+    Bibliotecas:
+    * pillow para gerenciamento de imagens dos produtos;
+    * dj_rest_auth e django-allauth para autenticação de usuários;
+    * django-filter para criar filtros.
+
 

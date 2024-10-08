@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Path, os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,7 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_filters',
     'products.apps.ProductsConfig',
+    'user.apps.UserConfig',
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',  
+    'dj_rest_auth.registration',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount', 
 ]
 
 MIDDLEWARE = [
@@ -50,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'FashionAvenue.urls'
@@ -123,7 +132,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -132,7 +146,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     
-    "DEFAULT_FILTER_BACKENDS": (
+    "DEFAULT_FILTER_BACKENDS":
+    (
         "django_filters.rest_framework.DjangoFilterBackend",
         "rest_framework.filters.OrderingFilter",
         "rest_framework.filters.SearchFilter",
@@ -143,12 +158,33 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
 
    
-    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'DEFAULT_AUTHENTICATION_CLASSES': 
+    [
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+
+    'DEFAULT_PERMISSION_CLASSES': 
+    [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
 
 }
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Backend padrão do Django
+    'allauth.account.auth_backends.AuthenticationBackend',  # Backend do django-allauth
+]
+
+
+# Configurações do django-allauth
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = True  # Define como True para exigir nome de usuário
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'  # Define o campo de nome de usuário
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Permite autenticação via nome de usuário ou email
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # Se você não quer verificação de email
+
+
+
+SITE_ID = 1
