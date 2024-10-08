@@ -65,8 +65,14 @@ $ python manage.py runserver
     POST /users/login/ Dar acesso ao usuário
     POST /users/logout/ Desconecta o usuário
     POST /users/registration/ Resgistra um usuário
-    
+```
+<div align="center">
+    <img src="assets/request-users-login.png" style="max-width: 100%; height: auto; width: 500px;"/>
+    <img src="assets/request-users-logout.png" style="max-width: 100%; height: auto; width: 500px;"/>
+    <img src="assets/request-users-registration.png" style="max-width: 100%; height: auto; width: 500px;"/>
+</div>
 
+```bash
 
 🛒 Produtos:
 
@@ -93,17 +99,16 @@ $ python manage.py runserver
 
 
 🛠️ Tecnologias Utilizadas:
-    Backend: Django, Django Rest Framework.
-    Banco de Dados: PostgreSQL.
-    Bibliotecas:
-    * pillow para gerenciamento de imagens dos produtos;
-    * dj_rest_auth e django-allauth para autenticação de usuários;
-    * django-filter para criar filtros.
-
-
 ```
-<div align="center">
-    <img src="assets/request-users-login.png" style="max-width: 100%; height: auto; width: 500px;"/>
-    <img src="assets/request-users-logout.png" style="max-width: 100%; height: auto; width: 500px;"/>
-    <img src="assets/request-users-registration.png" style="max-width: 100%; height: auto; width: 500px;"/>
-</div>
+   ### Backend
+- **Django**: [Documentação oficial do Django](https://docs.djangoproject.com/)
+- **Django Rest Framework**: [Documentação oficial do Django Rest Framework](https://www.django-rest-framework.org/)
+
+### Banco de Dados
+- **PostgreSQL**: [Documentação oficial do PostgreSQL](https://www.postgresql.org/docs/)
+
+### Bibliotecas
+- **Pillow**: [Gerenciamento de imagens](https://pillow.readthedocs.io/)
+- **dj_rest_auth**: [Autenticação de usuários com dj-rest-auth](https://dj-rest-auth.readthedocs.io/)
+- **django-allauth**: [Autenticação de usuários com django-allauth](https://docs.allauth.org/)
+- **django-filter**: [Criação de filtros com django-filter](https://django-filter.readthedocs.io/)
