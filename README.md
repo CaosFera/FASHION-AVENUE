@@ -27,11 +27,6 @@
 <h2 align="center"> 
     :construction:  Projeto em construção  :construction:
 </h2>
-<div align="center">
-        <img src="assets/request-users-login.png"  width="500"/>
-        <img src="assets/request-users-logout.png"  width="500"/>
-        <img src="assets/request-users-registration.png"  width="500"/>
-    </div>
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina Python 3.10 ou qualquer versão acima. Além disso, é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/).
@@ -97,10 +92,7 @@ $ python manage.py runserver
     DELETE /cart/ - Remove um produto do carrinho.
 
 
-🛠️ Tecnologias Utilizadas
-
-As principais tecnologias usadas no desenvolvimento deste projeto incluem:
-
+🛠️ Tecnologias Utilizadas:
     Backend: Django, Django Rest Framework.
     Banco de Dados: PostgreSQL.
     Bibliotecas:
@@ -109,4 +101,9 @@ As principais tecnologias usadas no desenvolvimento deste projeto incluem:
     * django-filter para criar filtros.
 
 
-
+```
+<div align="center">
+    <img src="assets/request-users-login.png" style="max-width: 100%; height: auto; width: 500px;"/>
+    <img src="assets/request-users-logout.png" style="max-width: 100%; height: auto; width: 500px;"/>
+    <img src="assets/request-users-registration.png" style="max-width: 100%; height: auto; width: 500px;"/>
+</div>
