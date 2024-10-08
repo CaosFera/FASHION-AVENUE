@@ -160,7 +160,7 @@ REST_FRAMEWORK = {
    
     'DEFAULT_AUTHENTICATION_CLASSES': 
     [
-        'rest_framework.authentication.SessionAuthentication',
+      
         'rest_framework.authentication.TokenAuthentication',
     ],
 
@@ -188,3 +188,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'  # Se você não quer verificação de email
 
 
 SITE_ID = 1
+# settings.py
+
+# Para desativar a verificação CSRF (apenas para desenvolvimento)
+# settings.py
+
