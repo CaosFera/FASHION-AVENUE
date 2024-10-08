@@ -66,10 +66,7 @@ $ python manage.py runserver
     POST /users/login/ Dar acesso ao usuário
     POST /users/logout/ Desconecta o usuário
     POST /users/registration/ Resgistra um usuário
-    ![Login](assets/request-users-login.png)
-    ![Logout](assets/request-users-logout.png)
-    ![Registration](assets/request-users-registration.png)
-
+    
 
 
 🛒 Produtos:
@@ -108,3 +105,10 @@ As principais tecnologias usadas no desenvolvimento deste projeto incluem:
     * django-filter para criar filtros.
 
 
+
+
+<div align="center">
+        <img src="assets/request-users-login.png"  width="500"/>
+        <img src="assets/request-users-logout.png"  width="500"/>
+        <img src="assets/request-users-registration.png"  width="500"/>
+    </div>
