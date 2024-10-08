@@ -106,9 +106,3 @@ As principais tecnologias usadas no desenvolvimento deste projeto incluem:
 
 
 
-
-<div align="center">
-        <img src="assets/request-users-login.png"  width="500"/>
-        <img src="assets/request-users-logout.png"  width="500"/>
-        <img src="assets/request-users-registration.png"  width="500"/>
-    </div>
