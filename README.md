@@ -27,7 +27,11 @@
 <h2 align="center"> 
     :construction:  Projeto em construção  :construction:
 </h2>
-
+<div align="center">
+        <img src="assets/request-users-login.png"  width="500"/>
+        <img src="assets/request-users-logout.png"  width="500"/>
+        <img src="assets/request-users-registration.png"  width="500"/>
+    </div>
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina Python 3.10 ou qualquer versão acima. Além disso, é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/).
